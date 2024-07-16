@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBridge</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    <style>
+        .team-members {
+            display: none;
+        }
+    </style>
+    <script>
+        function toggleTeamMembers() {
+            var x = document.getElementById("team-members");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>CO-2 Emission By Country</h1>
+        <a href="{{ url_for('prediction') }}"><button>Prediction</button></a>
+        <h2>About Project</h2>
+        <p>
+            "A Machine Learning Model for calculating CO2 emission by country. Due to the increasingly deteriorating environment, 
+            it is time the government upgrades the energy consumption structure. Significantly reducing CO2 emissions from countries 
+            will not be easy, but as we have data of countries' emissions, by applying Machine Learning we can extract the important features 
+            for getting the output."
+        </p>
+        <button onclick="toggleTeamMembers()">Team Members</button>
+        <div id="team-members" class="team-members">
+            <h2>Team Members</h2>
+            <ul>
+                <li>Member 1</li>
+                <li>Member 2</li>
+                <li>Member 3</li>
+                <li>Member 4</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

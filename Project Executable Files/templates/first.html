@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBridge</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        p {
+            text-align: left;
+            color: #555;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+       
+        button:hover:active{
+             background-color: deepskyblue;
+        }
+
+        .team-members {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .team-members ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .team-members li {
+            background-color: #f9f9f9;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+    <script>
+        function toggleTeamMembers() {
+            var x = document.getElementById("team-members");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>CO-2 Emission By Country</h1>
+        <a href="{{ url_for('prediction') }}"><button>Prediction</button></a>
+        <h2>About Project</h2>
+        <p>
+            "A Machine Learning Model for calculating CO2 emission by country. Due to the increasingly deteriorating environment, 
+            it is time the government upgrades the energy consumption structure. Significantly reducing CO2 emissions from countries 
+            will not be easy, but as we have data of countries' emissions, by applying Machine Learning we can extract the important features 
+            for getting the output."
+        </p>
+        <button onclick="toggleTeamMembers()">Team Members</button>
+        <div id="team-members" class="team-members">
+            <ul>
+                <li>M.Vamshi</li>
+                <li>J.Priyanka</li>
+                <li>M.Malavika</li>
+                <li>G.Sagar</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

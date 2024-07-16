@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles2.css')}}">
+</head>
+<body>
+    <form action="/predict" method="post">
+        <label for="cname">Country Name:</label>
+        <input type="text" id="cname" name="cname" required><br><br>
+        <label for="Ccode">Country Code:</label>
+        <input type="text" id="Ccode" name="Ccode" required><br><br>
+        <label for="Iname">Indicator Name:</label>
+        <input type="text" id="Iname" name="Iname" required><br><br>
+        <label for="year">Year:</label>
+        <input type="text" id="year" name="year" required><br><br>
+        <div class="submit-container">
+            <input type="submit" href="{{url_for('predict')}}" value="Predict">
+        </div>
+    </form>
+</body>
+</html>

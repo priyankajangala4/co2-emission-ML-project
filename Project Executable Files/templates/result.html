@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles3.css')}}">
+    <style>
+        /* styles3.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20230720/pngtree-3d-illustration-of-co2-emissions-from-carbon-dioxide-image_3720214.jpg");
+    background-size: cover;
+}
+
+div {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 500px;
+    margin: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div>
+    <h1>Prediction Result</h1>
+    <p>The predicted CO2 emission is: {{ prediction }}</p>
+    <button><a href="{{ url_for('home') }}">Home</a></button>
+    <button><a href="{{ url_for('prediction') }}">Make Another Prediction</a></button>
+    </div>
+    </body>
+</html>
